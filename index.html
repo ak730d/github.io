@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>霍兰德职业兴趣测评</title>
+    <!-- 引入微信JS-SDK（分享用，需替换appid） -->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <!-- 引入外部CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 首页 -->
+    <div id="home-page" class="page active">
+        <div class="container">
+            <div class="home-title">
+                <h1>霍兰德职业兴趣测评</h1>
+                <p>60题解锁你的职业天赋</p>
+            </div>
+            
+            <div class="home-desc">
+                <p>① 共60道题，预计耗时5分钟</p>
+                <p>② 无需注册，即答即出结果</p>
+                <p>③ 结果仅供职业规划参考</p>
+            </div>
+            
+            <button class="btn btn-primary" id="start-btn">开始测评</button>
+            
+            <div class="home-tip">
+                测评结果仅为参考，非职业决策依据
+            </div>
+        </div>
+    </div>
+
+    <!-- 答题页 -->
+    <div id="quiz-page" class="page">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-text" id="progress-text">第1题/共60题</div>
+                <div class="progress-container">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="question-content" id="question-text">
+                加载中...
+            </div>
+            
+            <div class="options">
+                <button class="option-btn option-unselected" id="option-yes">是</button>
+                <button class="option-btn option-unselected" id="option-no">否</button>
+            </div>
+            
+            <div class="nav-btns">
+                <button class="btn btn-disabled nav-btn" id="prev-btn">上一题</button>
+                <button class="btn btn-primary nav-btn" id="next-btn">下一题</button>
+            </div>
+            
+            <div class="toast" id="toast">请选择答案后继续</div>
+        </div>
+    </div>
+
+    <!-- 结果页 -->
+    <div id="result-page" class="page">
+        <div class="container">
+            <div class="result-core">
+                <h2 id="core-dimensions">你的核心职业倾向：S·E·A</h2>
+                <p id="score-overview">R:8分 | I:6分 | A:9分 | S:10分 | E:9分 | C:7分</p>
+            </div>
+            
+            <div class="dimension-list" id="dimension-list">
+                <!-- 维度项将通过JS动态生成 -->
+            </div>
+            
+            <div class="career-recommend">
+                <h3>适配职业TOP3</h3>
+                <div id="career-list">
+                    <!-- 职业推荐将通过JS动态生成 -->
+                </div>
+            </div>
+            
+            <div class="result-btns">
+                <button class="btn btn-outline result-btn" id="restart-btn">重新测评</button>
+                <button class="btn btn-primary result-btn" id="save-btn">保存结果</button>
+            </div>
+            
+            <div class="share-tip">
+                点击右上角分享至微信好友/朋友圈
+            </div>
+            
+            <div class="toast" id="save-toast">长按屏幕保存测评结果</div>
+        </div>
+    </div>
+
+    <!-- 引入外部JS -->
+    <script src="script.js"></script>
+</body>
+</html>
